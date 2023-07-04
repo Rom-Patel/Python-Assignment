@@ -1,19 +1,24 @@
 import tkinter as tk
 import webbrowser as wb
-obj=tk.Tk()
+root=tk.Tk()
 
-e=tk.Entry(obj,font=("Times New Roman",30),width=40)
-e.pack(anchor="center")
+l1=tk.Label(root,text="Amazon Prime",
+            font=("Times New Roman",25),
+            width=30,bg="sky blue")
+l1.grid()
+e=tk.Entry(root,font=("Times New Roman",30),width=40)
+e.grid()
 
 def display():
     s=e.get()
-    wb.open(f"https://www.youtube.com/results?search_query={s}") 
-    print("Navigating to youtube search:",(f"https://www.youtube.com/results?search_query={s}"))
+    wb.open(f"https://www.primevideo.com/search/ref=atv_nb_sug?ie=UTF8&phrase={s}") 
+    print("Navigating to amazon prime video search:",
+          (f"https://www.primevideo.com/search/ref=atv_nb_sug?ie=UTF8&phrase=={s}"))
 
-b1=tk.Button(obj,text="Search",font=("Times New Roman",30),command=display)
-b1.pack(anchor="center")
+b1=tk.Button(root,text="Search",font=("Times New Roman",30),command=display)
+b1.grid()
 
-b=tk.Button(obj,text="Close",font=("Times New Roman",30),command=obj.destroy)
-b.pack(anchor="sw")
-obj.mainloop()
+b=tk.Button(root,text="Close",font=("Times New Roman",30),command=root.destroy)
+b.grid()
+root.mainloop()
 

@@ -6,7 +6,7 @@ l1=tk.Label(root,text="Amazon Prime",
             font=("Times New Roman",25),
             width=30,bg="sky blue")
 l1.grid()
-e=tk.Entry(root,font=("Times New Roman",30),width=40)
+e=tk.Entry(root,font=("Times New Roman",30),width=40,)
 e.grid()
 
 def display():
@@ -15,8 +15,12 @@ def display():
     print("Navigating to amazon prime video search:",
           (f"https://www.primevideo.com/search/ref=atv_nb_sug?ie=UTF8&phrase=={s}"))
 
-b1=tk.Button(root,text="Search",font=("Times New Roman",30),command=display)
-b1.grid()
+b1=tk.Button(root,text="Search",
+            font=("Times New Roman",25),
+            bg="sky blue",
+            activebackground="white",
+            command=display
+            ).grid()
 
 b=tk.Button(root,text="Close",font=("Times New Roman",30),command=root.destroy)
 b.grid()

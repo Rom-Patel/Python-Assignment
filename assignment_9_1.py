@@ -11,7 +11,7 @@ class File_Operations:
         except FileNotFoundError:
             raise FileNotFoundError("File not found.")
         except Exception as e:
-            raise Exception(f"Error! File not found.")
+            raise Exception(e)
 
     def write_file(self, filename, content):
         try:
@@ -24,9 +24,18 @@ class File_Operations:
     def write(self,filename):
         try:
             with open(filename,"w") as file:
+                file.write()
+        except IOError as e:
+            print("An error occurred while opening or writing to the file:", str(e))
+
+    
+    def write_lin(self,filename):
+        try:
+            with open(filename,"w") as file:
                 file.writelines()
         except IOError as e:
             print("An error occurred while opening or writing to the file:", str(e))
+
 
 # User-defined exception
 class MyCustomException(Exception):
